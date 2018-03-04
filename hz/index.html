@@ -1,10 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <title>应用下载</title>
+   
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>下载测试</title>
+    <style type="text/css">
+        body
+        {
+            background-color: #B0C4DE;
+        }
+    </style>
+    <script type="text/javascript">
+        var isSetupAPP = false;
+        function setupAPP() {
+            if (isSetupAPP) {
+                return;
+            }
+            isSetupAPP = true;
+            
+            /* url=https://XXX.plist
+             * 这里填上.plist文件的下载地址
+             */
+            window.location.href = "itms-services:///?action=download-manifest&url=https://github.com/2272229234/SuperFolder/blob/master/hz/manifest.plist";
+            var setupA = document.getElementById("setupA");
+            setupA.innerHTML = "谢 谢";
+        }
+   
+    </script>
 </head>
 <body>
-<a href="itms-services://?action=download-manifest&url=https://github.com/2272229234/SuperFolder/blob/master/hz/manifest.plist">点击开始安装App</a>
+	<p align="center" style="color: white; font-size: 30px; padding-top: 50px;">测 试 页 面</p>
+	<div style="width:100%;" align="center">
+		<button id="setupA" type="button" style="width:150px;height:35px; font-size: 25px" onclick="javascript:setupAPP();">点 击 下 载</button>
+	</div>
 </body>
 </html>
